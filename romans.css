@@ -1,0 +1,82 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Added sans-serif as a fallback */
+  color: navy;
+}
+
+/* Container for the entire app */
+.container {
+  display: flex;
+  justify-content: center; /* Centered the container on the page */
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+
+/* Style for the content section */
+.content {
+  display: flex;
+  flex-direction: column; /* Changed from inline-flex to flex for better control over item alignment */
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Adjusted width for better responsiveness */
+  padding: 25px;
+  box-shadow: 0 0 3px #000;
+  border-radius: 10px; /* Added border-radius for consistent styling with other elements */
+}
+
+/* Grouping elements like input fields and their labels */
+.group {
+  display: flex;
+  width: 100%; /* Ensure full width for alignment */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Styling for the output display */
+.convert-output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Adjusted to take full width */
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #eee;
+  min-height: 60px;
+  margin: 30px 0;
+  font-size: 1.5em; /* Adjusted font size for better readability */
+}
+
+/* Input text field styling */
+input[type="text"] {
+  width: 60%; /* Adjusted width for better form layout */
+  padding: 10px;
+  font-size: 1em; /* Adjusted for consistency */
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  margin-left: 10px; /* Added space for visual separation from label */
+}
+
+/* Convert button styling */
+.convert-button {
+  font-size: 1.2em;
+  cursor: pointer;
+  border: none; /* Removed border for a cleaner look */
+  border-radius: 30px;
+  padding: 10px 20px; /* Adjusted padding for better ergonomics */
+  background-color: #4a5aef; /* Updated color for a modern look */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Updated shadow for depth */
+  transition: background-color 0.2s ease, transform 0.2s ease; /* Added transform to transition effects */
+}
+
+/* Convert button hover effect */
+.convert-button:hover {
+  background-color: #373f6f; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scale for feedback */
+}
