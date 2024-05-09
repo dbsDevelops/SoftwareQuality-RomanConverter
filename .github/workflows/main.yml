@@ -33,6 +33,7 @@ jobs:
          node-version: 20.x
       - name: Install Dependencies
         run: | 
+          npm init playwright@latest
           npm install @playwright/test
           npx playwright install
       - name: Test
