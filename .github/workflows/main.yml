@@ -33,9 +33,10 @@ jobs:
          node-version: 20.x
       - name: Install Dependencies
         run: | 
+          npm install @playwright/test
           npx playwright install
       - name: Test
-        run: npx playwright test.html 
+        run: npx playwright test test.html 
 
   deploy:
     environment:
