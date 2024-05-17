@@ -50,7 +50,9 @@ jobs:
       - name: Install Dependencies
         run: npm i eslint@5.16.0
       - name: Lint
-        run: node_modules/eslint/bin/eslint.js tests.js  
+      - run: |
+        eslint --init
+        node_modules/eslint/bin/eslint.js triangle.js  
 
   deploy:
     environment:
