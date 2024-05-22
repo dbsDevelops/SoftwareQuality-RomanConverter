@@ -28,8 +28,6 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ],
-        "no-trailing-spaces": "error",
-        "prefer-const": "error"
+        ]
     }
 };
