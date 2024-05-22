@@ -1,17 +1,13 @@
 module.exports = {
-        "plugins": [
-            "es5"
-        ]
+    "env": {
+        "browser": true,
+        "es6": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:es5/no-es2015"
-        ]
+    "extends": "eslint:recommended",
     "parserOptions": {
         "sourceType": "module"
     },
     "rules": {
-        "es5/no-arrow-functions": "error"
         "no-cond-assign": [
             "error",
             "always"
@@ -26,12 +22,14 @@ module.exports = {
         ],
         "quotes": [
             "error",
-            "double"
+            "single"
         ],
         "no-unused-vars": "off",
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-trailing-spaces": "error",
+        "prefer-const": "error"
     }
 };
