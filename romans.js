@@ -1,3 +1,5 @@
+/* global gtag */
+
 /**
  * @global
  * @function gtag
@@ -5,7 +7,6 @@
  * @param {string} event
  * @param {Object} params
  */
-
 
 // Constants for the literals
 const INVALID_ROMAN = 'Please enter a valid roman';
