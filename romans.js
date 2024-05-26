@@ -15,11 +15,6 @@ function init() {
 
   modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
-    // Track mode change event
-    gtag('event', 'mode_change', {
-      'event_category': 'Conversion',
-      'event_label': e.target.checked ? 'Integer to Roman' : 'Roman to Integer'
-    });
   });
 
   const getModeTitle = function(integerToRoman) {
