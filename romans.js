@@ -1,3 +1,12 @@
+/**
+ * @global
+ * @function gtag
+ * @param {string} command
+ * @param {string} event
+ * @param {Object} params
+ */
+
+
 // Constants for the literals
 const INVALID_ROMAN = 'Please enter a valid roman';
 const INVALID_INTEGER = 'Please enter a valid integer';
@@ -15,6 +24,11 @@ function init() {
 
   modeCheckbox.addEventListener('change', function(e) {
     header.innerHTML = getModeTitle(e.target.checked);
+    // Track mode change event
+    gtag('event', 'mode_change', {
+      'event_category': 'Conversion',
+      'event_label': e.target.checked ? 'Integer to Roman' : 'Roman to Integer'
+    });
   });
 
   const getModeTitle = function(integerToRoman) {
@@ -32,8 +46,21 @@ function init() {
     var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
     if (convertion.result) {
       outputArea.innerHTML = convertion.value;
+      // Track successful conversion event
+      gtag('event', 'conversion_success', {
+        'event_category': 'Conversion',
+        'event_label': modeCheckbox.checked ? 'Integer to Roman' : 'Roman to Integer',
+        'value': inputValue
+      });
     } else {
       alert(convertion.message);
+      // Track error event
+      gtag('event', 'conversion_error', {
+        'event_category': 'Conversion',
+        'event_label': modeCheckbox.checked ? 'Integer to Roman' : 'Roman to Integer',
+        'error_message': conversion.message,
+        'value': inputValue
+      });
     }
   });
 
