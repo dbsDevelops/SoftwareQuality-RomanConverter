@@ -36,7 +36,7 @@ function init() {
     return integerToRoman ? 'Integer To Roman' : 'Roman To Integer';
   };
 
-  // Now, the convertion operation does only perform the operation. 
+  // Now, the conversion operation does only perform the operation. 
   // Things we have extracted to this listener: 
   // 1 - Read the UI inputs (inputArea.value)
   // 2 - Write the UI output (outputArea.innerHTML)
@@ -44,9 +44,9 @@ function init() {
   // This is cleaner and also removes code duplications
   convertButton.addEventListener('click', function() {
     var inputValue = inputArea.value;
-    var convertion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
-    if (convertion.result) {
-      outputArea.innerHTML = convertion.value;
+    var conversion = modeCheckbox.checked ? convertIntegerToRoman(inputValue) : convertRomanToInteger(inputValue);
+    if (conversion.result) {
+      outputArea.innerHTML = conversion.value;
       // Track successful conversion event
       gtag('event', 'conversion_success', {
         'event_category': 'Conversion',
@@ -54,7 +54,7 @@ function init() {
         'value': inputValue
       });
     } else {
-      alert(convertion.message);
+      alert(conversion.message);
       // Track error event
       gtag('event', 'conversion_error', {
         'event_category': 'Conversion',
@@ -67,7 +67,7 @@ function init() {
 
 }
 
-// Now the convertion methods receive both an input argument instead
+// Now the conversion methods receive both an input argument instead
 // of reading directly from the UI.
 // On top of that, they return a JSON object instead of updating the
 // UI directly. The JSON object contains the result (ok/nok), the value
@@ -127,7 +127,7 @@ const convertRomanToInteger = function(roman) {
   return response;
 };
 
-// Now the convertion methods receive both an input argument instead
+// Now the conversion methods receive both an input argument instead
 // of reading directly from the UI.
 // On top of that, they return a JSON object instead of updating the
 // UI directly. The JSON object contains the result (ok/nok), the value
